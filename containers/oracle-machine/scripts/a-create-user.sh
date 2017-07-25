@@ -3,7 +3,7 @@ echo "CREATE USER $1 IDENTIFIED BY $1 DEFAULT TABLESPACE DBO QUOTA UNLIMITED ON 
 echo "GRANT CREATE SESSION TO $1;" >> a-create-user.sql
 echo "ALTER USER $1 IDENTIFIED BY $1 ACCOUNT UNLOCK;" >> a-create-user.sql
 echo "ALTER USER $1 DEFAULT ROLE ALL;" >> a-create-user.sql
-echo "CREATE OR REPLACE DIRECTORY DUMP_DIR AS '/dmp';" >> a-create-user.sql
+echo "CREATE OR REPLACE DIRECTORY DUMP_DIR AS '/dumps';" >> a-create-user.sql
 echo "GRANT READ, WRITE ON DIRECTORY DUMP_DIR TO $1;" >> a-create-user.sql
 
 /u01/app/oracle/product/11.2.0/xe/bin/sqlplus "SYS/oracle" AS SYSDBA @"a-create-user.sql"
