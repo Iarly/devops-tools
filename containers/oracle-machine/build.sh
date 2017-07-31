@@ -1,1 +1,1 @@
-docker build . -t oramachine
+docker build . -t oramachine$1
